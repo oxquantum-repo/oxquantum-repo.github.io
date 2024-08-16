@@ -232,11 +232,63 @@
         }
     }
 
+      /* Add or modify these styles */
+      @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-image {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            #lab-logo {
+                max-width: 200px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-member {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .team-member img {
+                margin-bottom: 15px;
+            }
+        }
+
+
+        /* Adjust the main content padding */
+        .container {
+            padding: 20px 10px;
+        }
+
+        /* Ensure images don't overflow their containers */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
 
 
     </style>
 </head>
 <body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <header class="neo-box">
     <div class="header-content">
         <div class="header-text">
