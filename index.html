@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natalia Ares' Group</title>
+    <style>
+        :root {
+            --background: #e0e5ec;
+            --text-color: #4a4a4a;
+            --shadow-light: #ffffff;
+            --shadow-dark: #a3b1c6;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .neo-box {
+        border-radius: 20px;
+        background: var(--background);
+        box-shadow: 8px 8px 16px var(--shadow-dark), 
+                    -8px -8px 16px var(--shadow-light);
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    header.neo-box {
+        padding: 20px;
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-text {
+        flex: 1;
+    }
+
+    .header-image {
+        flex-shrink: 0;
+        margin-left: 20px;
+    }
+
+    #lab-logo {
+        max-width: 300px;
+        height: auto;
+    }
+        header {
+            margin-bottom: 40px;
+        }
+        h1, h2, h3 {
+            color: var(--text-color);
+        }
+
+        h1, h2 {
+        color: var(--text-color);
+        margin: 0; /* Remove default margins */
+    }
+
+    h1 {
+        margin-bottom: 5px; /* Add a small margin below h1 */
+    }
+
+    h2 {
+        margin-top: 0; /* Ensure no top margin on h2 */
+        font-size: 1.2em; /* Optionally, reduce the font size of h2 */
+        margin-bottom: 10px;
+    }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            box-shadow: inset 3px 3px 6px var(--shadow-dark), 
+                        inset -3px -3px 6px var(--shadow-light);
+        }
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background: var(--background);
+            color: var(--text-color);
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 5px 5px 10px var(--shadow-dark), 
+                        -5px -5px 10px var(--shadow-light);
+        }
+        .btn:hover {
+            box-shadow: inset 3px 3px 6px var(--shadow-dark), 
+                        inset -3px -3px 6px var(--shadow-light);
+        }
+        form .form-group {
+            margin-bottom: 20px;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background: var(--background);
+            box-shadow: inset 3px 3px 6px var(--shadow-dark), 
+                        inset -3px -3px 6px var(--shadow-light);
+        }
+        #publications article {
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .team-section {
+        text-align: center;
+    }
+
+    .team-section h2 {
+        margin-bottom: 20px;
+    }
+
+    .team-leader-grid {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+
+    .team-leader {
+        max-width: 600px;
+        width: 100%;
+    }
+        .team-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);  /* Changed this line */
+        gap: 20px;
+        justify-content: center;
+    }
+
+
+
+    .team-member {
+        display: flex;
+        align-items: start;
+        gap: 15px;
+        padding: 15px;
+        background: var(--background);
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px var(--shadow-dark), 
+                    -5px -5px 10px var(--shadow-light);
+    }
+
+    /* Add a media query for smaller screens */
+    @media (max-width: 768px) {
+        .team-grid {
+            grid-template-columns: 1fr;  /* Single column on smaller screens */
+        }
+    }
+
+    .team-member img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 3px 3px 6px var(--shadow-dark), 
+                    -3px -3px 6px var(--shadow-light);
+    }
+
+    .member-info h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    .member-info p {
+        margin: 0;
+        font-size: 0.9em;
+    }
+
+    .team-section {
+        text-align: center;
+    }
+
+    .team-section h2 {
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .team-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .team-leader {
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .team-member {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <header class="neo-box">
+    <div class="header-content">
+        <div class="header-text">
+            <h1>Machine Learning for Quantum Devices and Foundations</h1>
+            <h2>Department of Engineering Science, University of Oxford</h2>
+        </div>
+        <div class="header-image">
+            <img src="University_of_Oxford.svg" alt="Lab Logo" id="lab-logo">
+        </div>
+    </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#" class="active" id="home-link">Home</a></li>
+                    <li><a href="#" id="about-link">About Us</a></li>
+                    <li><a href="#" id="research-link">Our Research</a></li>
+                    <li><a href="#" id="contact-link">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main id="main-content">
+            <!-- Content will be dynamically loaded here -->
+        </main>
+        <footer class="neo-box">
+            <p>&copy; 2024 Natalia Ares Lab. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mainContent = document.getElementById('main-content');
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        // Use event delegation for nav clicks
+        document.querySelector('nav ul').addEventListener('click', function(event) {
+            if (event.target.tagName === 'A') {
+                event.preventDefault();
+                const clickedLink = event.target;
+                setActiveLink(clickedLink);
+                loadContent(clickedLink.id);
+            }
+        });
+
+        function setActiveLink(activeLink) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            activeLink.classList.add('active');
+        }
+
+        function loadContent(linkId) {
+            switch(linkId) {
+                case 'home-link':
+                    loadHome();
+                    break;
+                case 'about-link':
+                    loadAbout();
+                    break;
+                case 'research-link':
+                    loadResearch();
+                    break;
+                case 'contact-link':
+                    loadContact();
+                    break;
+            }
+        }
+
+        function loadHome() {
+            mainContent.innerHTML = `
+                <div class="neo-box" id="welcome">
+                    <h2>Welcome to Natalia Ares' Group Page</h2>
+                    <p>We research quantum behaviour in nanoscale devices. The manipulation of nanoscale devices in the quantum regime has gone from proof-of-principle experiments to being the building block of a new generation of quantum technologies...it is an exciting time for quantum research!</p>
+                </div>
+                <div class="neo-box" id="news">
+                    <h2>Projects</h2>
+                    <p>We are currently working on the following projects:</p>
+                    <ul>
+                        <li><b>Efficient quantum device tuning using machine learning</b>: Fault-tolerant quantum computers require hundreds to millions of physical qubits to be operated with high fidelity. Inevitable hardware imperfections must be tuned away. The technology is only scalable if this task can be efficiently automated.  We are applying automating techniques experimentally, working with leaders in machine learning.
+The objective is to achieve automated tuning of semiconductor qubits encoded in gate-defined quantum dots.  We expect this machine learning approach to enable the tuning of large quantum circuits.</li>
+                        <li><b>Quantum Information Thermodynamics in the solid state</b>: 
+The field of quantum thermodynamics has long been dominated by theoretical predictions, undermined by a severe lack of experimental tests. However, rapid breakthroughs in nanoscale fabrication and measurement are now presenting us with the opportunity to develop concrete experimental foundations for exploring quantum-thermodynamic processes. Understanding the peculiarities of thermodynamics in the quantum arena will be key for the construction of nanomachines, for energy harvesting, and to master the dissipation and thermalization of quantum systems. It will also improve the engineering basis of quantum technologies by allowing fully informed choices on device design and optimization and it may reveal possibilities for entirely novel technologies.</li>
+                    </ul>
+                </div>
+       <div class="neo-box" id="twitter-feed">
+            <h2>Twitter Feed</h2>
+            <div id="twitter-timeline-container"></div>
+        </div>
+    `;
+    loadTwitterWidget();
+}
+
+function loadTwitterWidget() {
+    const script = document.createElement('script');
+    script.src = "https://platform.twitter.com/widgets.js";
+    script.charset = "utf-8";
+    script.async = true;
+    document.body.appendChild(script);
+
+    script.onload = () => {
+        twttr.widgets.createTimeline(
+            {
+                sourceType: "profile",
+                screenName: "NAresgroup"
+            },
+            document.getElementById("twitter-timeline-container"),
+            {
+                height: 400,
+                width: "100%"
+            }
+        );
+    };
+}
+
+function loadAbout() {
+    mainContent.innerHTML = `
+        <div class="neo-box"  id="team-members">
+            <h2>About Us</h2>
+            <h3>Meet the people who make this lab tick.</h3>
+             <div class="team-section">
+        <h2>Our Team</h2>
+        <div class="team-leader-grid">
+            <div class="team-member team-leader">
+                <img src="website_images/Natalia_Ares.webp" alt="Professor Natalia Ares">
+                <div class="member-info">
+                    <h3>Professor Natalia Ares</h3>
+                    <p>Associate Professor Natalia Ares works on experiments to advance the development of quantum technologies, with a focus on artificial intelligence for quantum device control and quantum thermodynamics. She joined the Materials Department at the University of Oxford in 2013. She was awarded a series of fellowships, including a Marie Skłodowska-Curie and a Royal Society University Research Fellowship, and was awarded a European Research Council Starting Grant in 2020. During her PhD she focused on silicon-based devices for quantum computing at CEA Grenoble, France. She completed her undergraduate studies in Physics and a Masters equivalent in the theory of quantum chaos at the University of Buenos Aires, Argentina, where she was born and raised. In October 2021 she was appointed as Associate Professor in the Department of Engineering Science and Tutorial Fellow at New College.</p>
+                    <p><b>Email: natalia.ares@eng.ox.ac.uk</b></p>
+                </div>
+            </div>
+        </div>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="website_images/Federico_Fedele.webp" alt="Dr. Federico Fedele">
+                <div class="member-info">
+                    <h3>Dr. Federico Fedele</h3>
+                    <p>My main research area is on quantum technologies and nanoscale quantum devices that allows fine control over individual charges and spins which are used to encode and manipulate quantum information. In addition, I am interested in hybrid devices, in which individual quantum systems are coupled to nanomechanical resonators such that their thermodynamic quantities can be measured and harnessed to further optimise these quantum systems. </p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="website_images/Federico_Fedele.webp" alt="Dr. Federico Fedele">
+                <div class="member-info">
+                    <h3>Dr. 
+Yikai Yang</h3>
+                    <p>Dr. Yikai Yang completed his undergraduate education in theoretical physics at Lanzhou University in China. He pursued a Master's in physics at University of Alberta in Canada, focusing on unconventional superconductors. After working in industry for four years, he joined EPFL in Switzerland for a PhD in the Laboratory for Quantum Magnetism, investigating critical behaviours of a model Ising magnet using microwave spectroscopy. In 2023, he joined Dr. Natalia Ares' group at the University of Oxford.</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="website_images/Federico_Fedele.webp" alt="Dr. Federico Fedele">
+                <div class="member-info">
+                    <h3>Dr. Federico Fedele</h3>
+                    <p>My main research area is on quantum technologies and nanoscale quantum devices that allows fine control over individual charges and spins which are used to encode and manipulate quantum information. In addition, I am interested in hybrid devices, in which individual quantum systems are coupled to nanomechanical resonators such that their thermodynamic quantities can be measured and harnessed to further optimise these quantum systems. </p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="website_images/Federico_Fedele.webp" alt="Dr. Federico Fedele">
+                <div class="member-info">
+                    <h3>Dr. Federico Fedele</h3>
+                    <p>My main research area is on quantum technologies and nanoscale quantum devices that allows fine control over individual charges and spins which are used to encode and manipulate quantum information. In addition, I am interested in hybrid devices, in which individual quantum systems are coupled to nanomechanical resonators such that their thermodynamic quantities can be measured and harnessed to further optimise these quantum systems. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+}
+
+function loadResearch() {
+    mainContent.innerHTML = `
+        <div class="neo-box">
+            <h2>Our Research</h2>
+            <p>Here are some of our publications listed below.</p>
+        </div>
+        <div class="neo-box" id="publications">
+            <p>Loading publications...</p>
+        </div>
+    `;
+    const authorName = 'Natalia Ares';
+    searchAuthorByName(authorName);
+}
+
+function searchAuthorByName(authorName) {
+    const apiKey = 'FS8JRtjhlz9oTXzg77RnL1caqwejbek32r2pY6jh';
+    const searchUrl = `https://api.semanticscholar.org/graph/v1/author/search?query=${encodeURIComponent(authorName)}`;
+
+    fetch(searchUrl, {
+        headers: {
+            'x-api-key': apiKey
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data && data.data && data.data.length > 0) {
+            const authorId = data.data[0].authorId;
+            fetchPublicationsByAuthor(authorId);
+        } else {
+            document.getElementById('publications').innerHTML = '<p>No publications found for this author.</p>';
+        }
+    })
+    .catch(error => {
+        console.error('Error searching author by name:', error);
+        document.getElementById('publications').innerHTML = '<p>Error loading publications. Please try again later.</p>';
+    });
+}
+
+        function loadContact() {
+            mainContent.innerHTML = `
+                <div class="neo-box">
+                    <h2>Contact Us</h2>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            `;
+            setupContactForm();
+        }
+
+        // Load home page by default
+        loadContent('home-link');
+
+        // Always attempt to load research data
+        searchAuthorByName('Natalia Ares');
+
+        function setupContactForm() {
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const formData = new FormData(contactForm);
+                const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    message: formData.get('message')
+                };
+                console.log('Form data submitted:', data);
+                alert('Thank you for your message. We will get back to you as soon as possible.');
+                contactForm.reset();
+            });
+        }
+
+      
+
+        function fetchPublicationsByAuthor(authorId) {
+            const apiKey = 'FS8JRtjhlz9oTXzg77RnL1caqwejbek32r2pY6jh';
+            const url = `https://api.semanticscholar.org/graph/v1/author/${authorId}/papers?fields=title,authors,year,venue,url,abstract&limit=100`;
+
+            fetch(url, {
+                headers: {
+                    'x-api-key': apiKey
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                displayPublications(data);
+            })
+            .catch(error => console.error('Error fetching publications:', error));
+        }
+
+        function displayPublications(data) {
+            const publicationsSection = document.getElementById('publications');
+            let publicationsContent = '<h2>Recent Publications</h2>';
+
+            data.data.forEach(publication => {
+                publicationsContent += `
+                    <article class="neo-box">
+                        <h3><a href="${publication.url}" target="_blank">${publication.title}</a></h3> 
+                        <p><strong>Authors:</strong> ${publication.authors.map(author => author.name).join(', ')}</p>
+                    </article>
+                `;
+            });
+
+            publicationsSection.innerHTML = publicationsContent;
+        }
+    
+
+    });
+    </script>
+</body>
+</html>
