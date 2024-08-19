@@ -569,7 +569,7 @@ function loadAbout() {
                 <div class="member-info">
                     <h3>Dr. 
 Yikai Yang</h3>
-                    <p>Dr. Yikai Yang completed his undergraduate education in theoretical physics at Lanzhou University in China. He pursued a Master's in physics at University of Alberta in Canada, focusing on unconventional superconductors. After working in industry for four years, he joined EPFL in Switzerland for a PhD in the Laboratory for Quantum Magnetism, investigating critical behaviours of a model Ising magnet using microwave spectroscopy. In 2023, he joined Dr. Natalia Ares' group at the University of Oxford.</p>
+                    <p>Dr. Yikai Yang holds a B.Sc. in theoretical physics from Lanzhou University in China. He then pursued a M.Sc. in experimental physics at University of Alberta in Canada, focusing on unconventional superconductors. After working in industry for four years, he joined EPFL in Switzerland for a Ph.D. program under the supervision of Dr. Henrik M. Ronnow, investigating quantum critical behaviours of strongly hybridised electro-nuclear spin states. In 2023, he joined Dr. Natalia Ares' group at the University of Oxford as a postdoctoral research assistant, working on various topics in Quantum Thermodynamics. Since April 2024, he holds a Newton International Fellowship from the Royal Society with a research focus on the materialisation of quantum engines.</p>
                 </div>
             </div>
             <div class="team-member">
@@ -687,6 +687,11 @@ Yikai Yang</h3>
     `;
 }
 
+// Add these variables at the top of your script
+let cachedPublications = null;
+let lastFetchTime = 0;
+const CACHE_DURATION = 3600000; // 1 hour in milliseconds
+
 function loadResearch() {
     mainContent.innerHTML = `
         <div class="neo-box">
@@ -698,7 +703,16 @@ function loadResearch() {
         </div>
     `;
     const authorName = 'Natalia Ares';
-    searchAuthorByName(authorName);
+    getPublications(authorName);
+}
+
+function getPublications(authorName) {
+    const currentTime = Date.now();
+    if (cachedPublications && (currentTime - lastFetchTime < CACHE_DURATION)) {
+        displayPublications(cachedPublications);
+    } else {
+        searchAuthorByName(authorName);
+    }
 }
 
 function searchAuthorByName(authorName) {
@@ -798,6 +812,8 @@ function searchAuthorByName(authorName) {
             })
             .then(response => response.json())
             .then(data => {
+                cachedPublications = data;
+                lastFetchTime = Date.now();
                 displayPublications(data);
             })
             .catch(error => console.error('Error fetching publications:', error));
