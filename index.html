@@ -307,6 +307,102 @@
             }
         }
 
+        .project-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .project-text {
+            flex: 1;
+        }
+
+        .project-images {
+            flex-shrink: 0;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .project-gif {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px var(--shadow-dark), 
+                        -5px -5px 10px var(--shadow-light);
+        }
+
+        @media (max-width: 768px) {
+            .project-container {
+                flex-direction: column;
+            }
+
+            .project-images {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
+
+        .alumni-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .alumni-list li {
+            margin-bottom: 10px;
+        }
+
+        #alumni {
+            margin-top: 40px;
+        }
+
+        .alumni-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .alumni-list li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--background);
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px var(--shadow-dark), 
+                        -5px -5px 10px var(--shadow-light);
+        }
+
+        .alumni-list li strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .alumni-list li p {
+            margin: 5px 0 0;
+            font-style: italic;
+        }
+
+        .header-text h2 a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .header-text h2 a:hover {
+            color: #0070ff;  // You can adjust this color to match your design
+        }
+
+        .header-text h1 a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .header-text h1 a:hover {
+            color: #0070ff;  // You can adjust this color to match your design
+        }
+
     </style>
 </head>
 <body>
@@ -314,11 +410,19 @@
     <header class="neo-box">
     <div class="header-content">
         <div class="header-text">
-            <h1>Machine Learning for Quantum Devices and Foundations</h1>
-            <h2>Department of Engineering Science, University of Oxford</h2>
+            <h1>
+                <a href="#" id="home-title-link">Machine Learning for Quantum Devices and Foundations</a>
+            </h1>
+            <h2>
+                <a href="https://eng.ox.ac.uk/" target="_blank" rel="noopener noreferrer">
+                    Department of Engineering Science
+                </a>
+            </h2>
         </div>
         <div class="header-image">
-            <img src="website_images/University_of_Oxford.png" alt="Lab Logo" id="lab-logo">
+            <a href="https://www.ox.ac.uk/" target="_blank" rel="noopener noreferrer">
+                <img src="website_images/University_of_Oxford.png" alt="University of Oxford Logo" id="lab-logo">
+            </a>
         </div>
     </div>
 
@@ -354,6 +458,13 @@
             }
         });
 
+        // Add event listener for the home title link
+        document.getElementById('home-title-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            setActiveLink(document.getElementById('home-link'));
+            loadContent('home-link');
+        });
+
         function setActiveLink(activeLink) {
             navLinks.forEach(link => link.classList.remove('active'));
             activeLink.classList.add('active');
@@ -382,15 +493,23 @@
                     <h2>Welcome to Natalia Ares' Group Page</h2>
                     <p>We research quantum behaviour in nanoscale devices. The manipulation of nanoscale devices in the quantum regime has gone from proof-of-principle experiments to being the building block of a new generation of quantum technologies...it is an exciting time for quantum research!</p>
                 </div>
-                <div class="neo-box" id="news">
+                <div class="neo-box" id="projects">
                     <h2>Projects</h2>
-                    <p>We are currently working on the following projects:</p>
-                    <ul>
-                        <li><b>Efficient quantum device tuning using machine learning</b>: Fault-tolerant quantum computers require hundreds to millions of physical qubits to be operated with high fidelity. Inevitable hardware imperfections must be tuned away. The technology is only scalable if this task can be efficiently automated.  We are applying automating techniques experimentally, working with leaders in machine learning.
+                    <div class="project-container">
+                        <div class="project-text">
+                            <p>We are currently working on the following projects:</p>
+                            <ul>
+                                <li><b>Efficient quantum device tuning using machine learning</b>: Fault-tolerant quantum computers require hundreds to millions of physical qubits to be operated with high fidelity. Inevitable hardware imperfections must be tuned away. The technology is only scalable if this task can be efficiently automated.  We are applying automating techniques experimentally, working with leaders in machine learning.
 The objective is to achieve automated tuning of semiconductor qubits encoded in gate-defined quantum dots.  We expect this machine learning approach to enable the tuning of large quantum circuits.</li>
-                        <li><b>Quantum Information Thermodynamics in the solid state</b>: 
+                                <li><b>Quantum Information Thermodynamics in the solid state</b>: 
 The field of quantum thermodynamics has long been dominated by theoretical predictions, undermined by a severe lack of experimental tests. However, rapid breakthroughs in nanoscale fabrication and measurement are now presenting us with the opportunity to develop concrete experimental foundations for exploring quantum-thermodynamic processes. Understanding the peculiarities of thermodynamics in the quantum arena will be key for the construction of nanomachines, for energy harvesting, and to master the dissipation and thermalization of quantum systems. It will also improve the engineering basis of quantum technologies by allowing fully informed choices on device design and optimization and it may reveal possibilities for entirely novel technologies.</li>
-                    </ul>
+                            </ul>
+                        </div>
+                        <div class="project-images">
+                            <img src="website_images/measurement.gif" alt="Measurement GIF" class="project-gif">
+                            <img src="website_images/tuning.gif" alt="Tuning GIF" class="project-gif">
+                        </div>
+                    </div>
                 </div>
        <div class="neo-box" id="twitter-feed">
             <h2>Twitter Feed</h2>
@@ -461,10 +580,10 @@ Yikai Yang</h3>
                 </div>
             </div>
             <div class="team-member">
-                <img src="website_images/Federico_Fedele.webp" alt="Dr. Parth Girdhar">
+                <img src="website_images/Parth_Girdhar.jpeg" alt="Dr. Parth Girdhar">
                 <div class="member-info">
                     <h3>Dr. Parth Girdhar</h3>
-                    <p>My main research area is on quantum technologies and nanoscale quantum devices that allows fine control over individual charges and spins which are used to encode and manipulate quantum information. In addition, I am interested in hybrid devices, in which individual quantum systems are coupled to nanomechanical resonators such that their thermodynamic quantities can be measured and harnessed to further optimise these quantum systems. </p>
+                    <p>I received B.Sc (Advanced) 1st class Honours majoring in physics, mathematics and thesis on theoretical cosmology, and Ph.D. on theoretical foundations of quantum physics, both from the University of Sydney. I have completed postdoctoral research at the University of New South Wales.  My research interests include machine learning for quantum device control, physical machine learning, quantum foundations and information theory.</p>
                 </div>
                  </div>
 
@@ -491,7 +610,7 @@ Yikai Yang</h3>
                 </div>
             </div>
             <div class="team-member">
-                <img src="website_images/Pranav_Vaidhyanathan.jpeg" alt=" Jonas Schuff">
+                <img src="website_images/Pranav_Vaidhyanathan.png" alt=" Jonas Schuff">
                 <div class="member-info">
                     <h3>Pranav Vaidhyanathan</h3>
                     <p>Theory of open quantum systems, specifically interested in investigating continuous measurements and feedback control in non markovian systems.</p>
@@ -499,18 +618,72 @@ Yikai Yang</h3>
             </div> 
 
             <div class="team-member">
-                <img src="website_images/Lucas_Schorling.jpeg" alt=" Jonas Schuff">
+                <img src="website_images/Lucas_Schorling.png" alt=" Jonas Schuff">
                 <div class="member-info">
                     <h3>Lucas Schorling</h3>
                     <p>I graduated with a BSc in Engineering Science from the Technical University of Munich and an MSc in Applied Mathematics from the University of Oxford. My current research focuses on developing machine learning algorithms to tune and control quantum devices, ranging from meta-learning to Bayesian optimization.</p>
                 </div>
             </div> 
 
+            <div class="team-member">
+                <img src="website_images/Cornelius_Carlsson.png" alt=" Jonas Schuff">
+                <div class="member-info">
+                    <h3>Cornelius Carlsson</h3>
+                    <p>I completed an integrated MEng in Materials Science at Imperial College London, followed by an MSc in Applied Physics at the Technical University of Delft. During my MSc thesis, I focused on probing charge noise using quantum device crossbars. After an internship at IBM, where I worked on designing reflectometry circuits, I am now at Oxford researching autonomous tuning methods for scalable spin-qubit architectures.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="website_images/Vivek_Wadhia.jpeg" alt=" Jonas Schuff">
+                <div class="member-info">
+                    <h3>Vivek Wadhia</h3>
+                    <p>My research focuses on noise characterisation and mitigation in superconducting and semiconducting qubits. I am particularly interested in the interplay between noise/errors, thermal effects and qubit benchmarking.</p>
+                </div>
+            </div>
+
 
             
 
-        </div>
+        </div> 
     </div>
+
+    <div class="neo-box" id="alumni">
+            <h2>Alumni</h2>
+            <ul class="alumni-list">
+                <li>
+                    <strong>Dr. Vincent Michal</strong> - Postdoctoral Researcher (2023-2024)
+                    <p>Current position: Assistant Professor at the Niels Bohr Institute, Copenhagen</p>
+                </li>
+                <li>
+                    <strong>Dr. Barnaby Van Straaten</strong> - PhD Student (2020-2024)
+                    <p>Current position: Postdoctoral Researcher at TU Delft</p>
+                </li>
+                <li>
+                    <strong>Dr. Brandon Severin</strong> - PhD Student (2020-2024)
+                    <p>Current position: CEO/Co-Founder at Conductor Quantum</p>
+                </li>
+                <li>
+                    <strong>Dr. Kushagra Aggarwal</strong> - PhD Student (2020-2023)
+                    <p>Current position: Postdoctoral Researcher at Cornell University</p>
+                </li>
+
+                <li>
+                    <strong>Dr. Sebastian Orbell</strong> - PhD Student (2020-2024)
+                    <p>Current position: Research Scientist at Quantum Motion</p>
+                </li>
+
+                <li>
+                    <strong>Dr. David Craig</strong> - PhD Student (2020-2024)
+                    <p>Current position: Research Scientist at QuantrolOx</p>
+                </li>
+
+
+
+                <!-- Add more alumni as needed -->
+            </ul>
+        </div>
+
+    
     `;
 }
 
