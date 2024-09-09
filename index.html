@@ -6,10 +6,13 @@
     <title>Natalia Ares' Group</title>
     <style>
         :root {
-            --background: #e0e5ec;
-            --text-color: #4a4a4a;
+            --background: linear-gradient(135deg, #e0e5ec, #f0f5fc);
+            --text-color: #2a4a8d;
             --shadow-light: #ffffff;
             --shadow-dark: #a3b1c6;
+            --accent-color: #4a90e2;
+            --secondary-color: #f39c12;
+            --tertiary-color: #2ecc71;
         }
         body, html {
             margin: 2;
@@ -35,6 +38,8 @@
     }
 
     header.neo-box {
+        background: linear-gradient(145deg, #f0f5fc, #e0e5ec);
+        color: var(--text-color);
         padding: 20px;
     }
 
@@ -97,8 +102,7 @@
             transition: all 0.3s ease;
         }
         nav ul li a:hover, nav ul li a.active {
-            box-shadow: inset 3px 3px 6px var(--shadow-dark), 
-                        inset -3px -3px 6px var(--shadow-light);
+            background: rgba(74, 144, 226, 0.2);
         }
         .content {
             display: grid;
@@ -110,8 +114,8 @@
             padding: 10px 20px;
             border: none;
             border-radius: 10px;
-            background: var(--background);
-            color: var(--text-color);
+            background: linear-gradient(145deg, var(--secondary-color), #e67e22);
+            color: white;
             font-size: 16px;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -119,8 +123,7 @@
                         -5px -5px 10px var(--shadow-light);
         }
         .btn:hover {
-            box-shadow: inset 3px 3px 6px var(--shadow-dark), 
-                        inset -3px -3px 6px var(--shadow-light);
+            background: linear-gradient(145deg, #e67e22, var(--secondary-color));
         }
         form .form-group {
             margin-bottom: 20px;
@@ -136,11 +139,14 @@
         }
         #publications article {
             margin-bottom: 20px;
+            border-left: 5px solid var(--tertiary-color);
         }
         footer {
             text-align: center;
             padding: 20px;
             margin-top: 40px;
+            background: linear-gradient(145deg, var(--tertiary-color), #27ae60);
+            color: rgba(5, 34, 88, 0.825);
         }
         .team-section {
         text-align: center;
@@ -178,6 +184,7 @@
         border-radius: 10px;
         box-shadow: 5px 5px 10px var(--shadow-dark), 
                     -5px -5px 10px var(--shadow-light);
+        border-top: 3px solid var(--accent-color);
     }
 
     /* Add a media query for smaller screens */
@@ -194,6 +201,7 @@
         border-radius: 50%;
         box-shadow: 3px 3px 6px var(--shadow-dark), 
                     -3px -3px 6px var(--shadow-light);
+        border: 3px solid var(--accent-color);
     }
 
     .member-info h3 {
@@ -390,7 +398,7 @@
         }
 
         .header-text h2 a:hover {
-            color: #0070ff;  // You can adjust this color to match your design
+            color: var(--secondary-color);
         }
 
         .header-text h1 a {
@@ -400,7 +408,75 @@
         }
 
         .header-text h1 a:hover {
-            color: #0070ff;  // You can adjust this color to match your design
+            color: var(--secondary-color);
+        }
+
+        /* Add a subtle animation to links */
+        a {
+            color: var(--accent-color);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Add more color to specific sections */
+        #welcome {
+            border-left: 5px solid var(--accent-color);
+        }
+
+        #projects {
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .neo-box ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .neo-box ul li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .neo-box ul li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: -10px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .join-us-image {
+            width: 400px;  /* or any other value that suits your layout */
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px var(--shadow-dark), 
+                        -5px -5px 10px var(--shadow-light);
+        }
+
+        @media (max-width: 900px) {
+            .image-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .join-us-image {
+                width: 100%;
+                max-width: 250px;  /* Ensures images don't get too large on mobile */
+            }
         }
 
     </style>
@@ -431,6 +507,7 @@
                     <li><a href="#" class="active" id="home-link">Home</a></li>
                     <li><a href="#" id="about-link">About Us</a></li>
                     <li><a href="#" id="research-link">Our Research</a></li>
+                    <li><a href="#" id="join-us-link">Join Us</a></li>
                     <li><a href="#" id="contact-link">Contact Us</a></li>
                 </ul>
             </nav>
@@ -480,6 +557,9 @@
                     break;
                 case 'research-link':
                     loadResearch();
+                    break;
+                case 'join-us-link':
+                    loadJoinUs();
                     break;
                 case 'contact-link':
                     loadContact();
@@ -551,7 +631,7 @@ function loadAbout() {
                 <img src="website_images/Natalia_Ares.webp" alt="Professor Natalia Ares">
                 <div class="member-info">
                     <h3>Professor Natalia Ares</h3>
-                    <p>Associate Professor Natalia Ares works on experiments to advance the development of quantum technologies, with a focus on artificial intelligence for quantum device control and quantum thermodynamics. She joined the University of Oxford in 2013. She was awarded a series of fellowships and grants, including a Marie Skłodowska-Curie and a Royal Society University Research Fellowship, and a European Research Council Starting Grant in 2020. During her PhD she focused on silicon-based devices for quantum computing at CEA Grenoble, France. She completed her undergraduate studies in Physics and a Masters equivalent in the theory of quantum chaos at the University of Buenos Aires, Argentina, where she was born and raised. In October 2021 she was appointed as Associate Professor in the Department of Engineering Science and Tutorial Fellow at New College.</p>
+                    <p>Associate Professor Natalia Ares works on experiments to advance the development of quantum technologies, with a focus on artificial intelligence for quantum device control and quantum thermodynamics. She joined the Materials Department at the University of Oxford in 2013. She was awarded a series of fellowships, including a Marie Skłodowska-Curie and a Royal Society University Research Fellowship, and was awarded a European Research Council Starting Grant in 2020. During her PhD she focused on silicon-based devices for quantum computing at CEA Grenoble, France. She completed her undergraduate studies in Physics and a Masters equivalent in the theory of quantum chaos at the University of Buenos Aires, Argentina, where she was born and raised. In October 2021 she was appointed as Associate Professor in the Department of Engineering Science and Tutorial Fellow at New College.</p>
                     <p><b>Email: natalia.ares@eng.ox.ac.uk</b></p>
                 </div>
             </div>
@@ -596,10 +676,10 @@ Yikai Yang</h3>
             </div> 
 
             <div class="team-member">
-                <img src="website_images/Marek_Rychetsky.jpeg" alt=" Jonas Schuff">
+                <img src="website_images/Marek_Rychetsky.png" alt="Marek Rychetský">
                 <div class="member-info">
                     <h3>​Marek Rychetský</h3>
-                    <p>I recieved MPhys in Theoretical Physics at Swansea University. I am researching how to create efficient design of sping qubit devices using machine learning. My other research interests are are quantum information and quantum machine learning. </p>
+                    <p>Marek is a DPhil student in the group, working on machine learning for tuning quantum dots.</p>
                 </div>
             </div> 
             <div class="team-member">
@@ -671,28 +751,13 @@ Yikai Yang</h3>
                     <strong>Dr. Sebastian Orbell</strong> - PhD Student (2020-2024)
                     <p>Current position: Research Scientist at Quantum Motion</p>
                 </li>
-                <li>
-                    <strong>Dr. Vu Nguyen</strong> -  Postdoctoral Researcher (2019-2020)
-                    <p>Current position: Senior Machine Learning Scientist, Amazon </p>
-                </li>
 
                 <li>
-                    <strong>Dr. Florian Vigneau</strong> -  Postdoctoral Researcher (2019-2021)
-                    <p>Current position: Quantum Hardware Engineer, IQM Quantum Computers </p>
+                    <strong>Dr. David Craig</strong> - PhD Student (2020-2024)
+                    <p>Current position: Research Scientist at QuantrolOx</p>
                 </li>
 
-                 <li>
-                    <strong>Dr. Hyungil Moon</strong> -  Postdoctoral Researcher (2017-2021)
-                    <p>Current position: Quantitative Strategist, Deutsche Bank </p>
-                </li>
-                  <li>
-                    <strong>Dr. Dominic Lennon</strong> - PhD Student (2017-2021)
-                    <p>Current position: Co-founder & Director of Product, QuantrolOx </p>
-                </li>
-                  <li>
-                    <strong>Dr.Anna Pearson</strong> - PhD Student (2017-2021)
-                    <p>Current position: Lead Manager, R&D at Quantinuum </p>
-                </li>
+
 
                 <!-- Add more alumni as needed -->
             </ul>
@@ -814,8 +879,6 @@ function searchAuthorByName(authorName) {
             });
         }
 
-      
-
         function fetchPublicationsByAuthor(authorId) {
             const apiKey = 'FS8JRtjhlz9oTXzg77RnL1caqwejbek32r2pY6jh';
             const url = `https://api.semanticscholar.org/graph/v1/author/${authorId}/papers?fields=title,authors,year,venue,url,abstract&limit=100`;
@@ -848,6 +911,26 @@ function searchAuthorByName(authorName) {
             });
 
             publicationsSection.innerHTML = publicationsContent;
+        }
+
+        function loadJoinUs() {
+            mainContent.innerHTML = `
+                <div class="neo-box">
+                    <h2>Join Our Team</h2>
+                    <p>We are always looking for talented individuals to join our research group. If you're passionate about quantum technologies and machine learning, we'd love to hear from you!</p>
+                </div>
+                <div class="neo-box">
+                    <h3>PhD Students</h3>
+                    <p> The university of Oxford handles applications through the <a href="https://www.ox.ac.uk/admissions/graduate/courses/dphil-engineering-science">online application system</a>. Please select "Dr Natalia Ares" as the supervisor. The deadline for the applications are usually in early December for entry in October the following year.</p>
+                </div>
+                <div class="neo-box">
+        
+            <div class="image-container">
+                <img src="website_images/fridges1.jpeg" alt="Our research lab" class="join-us-image">
+                <img src="website_images/fridges2.jpg" alt="Team working on quantum devices" class="join-us-image">
+            </div>
+        </div>
+            `;
         }
     
 
