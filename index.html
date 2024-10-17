@@ -479,6 +479,74 @@
             }
         }
 
+        /* Style for the team-section headings */
+        .team-section h3 {
+            margin-top: 40px;
+            color: var(--text-color);
+        }
+
+        /* Optional: Adjust spacing between team grids */
+        .team-grid {
+            margin-top: 20px;
+        }
+
+        /* Team Manager Styles */
+        .team-manager-grid {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .team-manager {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: start;
+            gap: 15px;
+            padding: 15px;
+            background: var(--background);
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px var(--shadow-dark), 
+                        -5px -5px 10px var(--shadow-light);
+            border-top: 3px solid var(--accent-color);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 3px 3px 6px var(--shadow-dark), 
+                        -3px -3px 6px var(--shadow-light);
+            border: 3px solid var(--accent-color);
+        }
+
+        .member-info h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .member-info p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        /* Adjust spacing between sections */
+        .team-section h3 {
+            margin-top: 40px;
+            color: var(--text-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .team-manager {
+                max-width: 100%;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -623,172 +691,197 @@ function loadTwitterWidget() {
 
 function loadAbout() {
     mainContent.innerHTML = `
-        <div class="neo-box"  id="team-members">
-             <div class="team-section">
-        <h2>Our Team</h2>
-        <div class="team-leader-grid">
-            <div class="team-member team-leader">
-                <img src="website_images/Natalia_Ares.webp" alt="Professor Natalia Ares">
-                <div class="member-info">
-                    <h3>Professor Natalia Ares</h3>
-                    <p>Associate Professor Natalia Ares works on experiments to advance the development of quantum technologies, with a focus on artificial intelligence for quantum device control and quantum thermodynamics. She joined the University of Oxford in 2013. She was awarded a series of fellowships, including a Marie Skłodowska-Curie and a Royal Society University Research Fellowship, and was awarded a European Research Council Starting Grant in 2020. During her PhD she focused on silicon-based devices for quantum computing at CEA Grenoble, France. She completed her undergraduate studies in Physics and a Masters equivalent in the theory of quantum chaos at the University of Buenos Aires, Argentina, where she was born and raised. In October 2021 she was appointed as Associate Professor in the Department of Engineering Science and Tutorial Fellow at New College.</p>
-                    <p><b>Email: natalia.ares@eng.ox.ac.uk</b></p>
-                </div>
-            </div>
-        </div>
-        <div class="team-grid">
-            <div class="team-member">
-                <img src="website_images/Federico_Fedele.webp" alt="Dr. Federico Fedele">
-                <div class="member-info">
-                    <h3>Dr. Federico Fedele</h3>
-                    <p>My main research area is on quantum technologies and nanoscale quantum devices that allows fine control over individual charges and spins which are used to encode and manipulate quantum information. In addition, I am interested in hybrid devices, in which individual quantum systems are coupled to nanomechanical resonators such that their thermodynamic quantities can be measured and harnessed to further optimise these quantum systems. </p>
-                </div>
-            </div>
-            <div class="team-member">
-                <img src="website_images/Yikai_Yang.webp" alt="Dr. Yikai Yang">
-                <div class="member-info">
-                    <h3>Dr. 
-Yikai Yang</h3>
-                    <p>Dr. Yikai Yang holds a B.Sc. in theoretical physics from Lanzhou University in China. He then pursued a M.Sc. in experimental physics at University of Alberta in Canada, focusing on unconventional superconductors. After working in industry for four years, he joined EPFL in Switzerland for a Ph.D. program under the supervision of Dr. Henrik M. Ronnow, investigating quantum critical behaviours of strongly hybridised electro-nuclear spin states. In 2023, he joined Dr. Natalia Ares' group at the University of Oxford as a postdoctoral research assistant, working on various topics in Quantum Thermodynamics. Since April 2024, he holds a Newton International Fellowship from the Royal Society with a research focus on the materialisation of quantum engines.</p>
-                </div>
-            </div>
-            <div class="team-member">
-                <img src="website_images/Joseph_Hickie.webp" alt="Dr. Joseph Hickie">
-                <div class="member-info">
-                    <h3>Dr. Joseph Hickie</h3>
-                    <p>Designing algorithms to improve quantum dot device readout and working on pulse optimisation for semiconductor qubits.</p>
-                </div>
-            </div>
-            <div class="team-member">
-                <img src="website_images/Parth_Girdhar.jpeg" alt="Dr. Parth Girdhar">
-                <div class="member-info">
-                    <h3>Dr. Parth Girdhar</h3>
-                    <p>I received B.Sc (Advanced) 1st class Honours majoring in physics, mathematics and thesis on theoretical cosmology, and Ph.D. on theoretical foundations of quantum physics, both from the University of Sydney. I have completed postdoctoral research at the University of New South Wales.  My research interests include machine learning for quantum device control, physical machine learning, quantum foundations and information theory.</p>
-                </div>
-                 </div>
-
-            <div class="team-member">
-                <img src="website_images/Jonas_Schuff.webp" alt=" Jonas Schuff">
-                <div class="member-info">
-                    <h3>Jonas Schuff</h3>
-                    <p>Combining the necessary parts (and proposing methods where there are gaps) to achieve fully automated tuning of semiconducting qubits. This will lead to an understanding of how highly complex algorithms can work together to contribute to the final goal of scalable quantum computers.</p>
-                </div>
-            </div> 
-
-            <div class="team-member">
-                <img src="website_images/Marek_Rychetsky.png" alt="Marek Rychetský">
-                <div class="member-info">
-                    <h3>​Marek Rychetský</h3>
-                    <p>Marek is a DPhil student in the group, working on machine learning for tuning quantum dots.</p>
-                </div>
-            </div> 
-            <div class="team-member">
-                <img src="website_images/Jonathan_Dexter.webp" alt=" Jonas Schuff">
-                <div class="member-info">
-                    <h3>Jonathan Dexter</h3>
-                    <p>Quantum thermodynamics and foundations</p>
-                </div>
-            </div>
-            <div class="team-member">
-                <img src="website_images/Pranav_Vaidhyanathan.png" alt=" Jonas Schuff">
-                <div class="member-info">
-                    <h3>Pranav Vaidhyanathan</h3>
-                    <p>Theory of open quantum systems, specifically interested in investigating continuous measurements and feedback control in non markovian systems.</p>
-                </div>
-            </div> 
-
-            <div class="team-member">
-                <img src="website_images/Lucas_Schorling.png" alt=" Jonas Schuff">
-                <div class="member-info">
-                    <h3>Lucas Schorling</h3>
-                    <p>I graduated with a BSc in Engineering Science from the Technical University of Munich and an MSc in Applied Mathematics from the University of Oxford. My current research focuses on developing machine learning algorithms to tune and control quantum devices, ranging from meta-learning to Bayesian optimization.</p>
-                </div>
-            </div> 
-
-            <div class="team-member">
-                <img src="website_images/Cornelius_Carlsson.png" alt=" Jonas Schuff">
-                <div class="member-info">
-                    <h3>Cornelius Carlsson</h3>
-                    <p>I completed an integrated MEng in Materials Science at Imperial College London, followed by an MSc in Applied Physics at the Technical University of Delft. During my MSc thesis, I focused on probing charge noise using quantum device crossbars. After an internship at IBM, where I worked on designing reflectometry circuits, I am now at Oxford researching autonomous tuning methods for scalable spin-qubit architectures.</p>
-                </div>
-            </div>
-
-            <div class="team-member">
-                <img src="website_images/Vivek_Wadhia.jpeg" alt=" Jonas Schuff">
-                <div class="member-info">
-                    <h3>Vivek Wadhia</h3>
-                    <p>My research focuses on noise characterisation and mitigation in superconducting and semiconducting qubits. I am particularly interested in the interplay between noise/errors, thermal effects and qubit benchmarking.</p>
-                </div>
-            </div>
-
-
-            
-
-        </div> 
-    </div>
-
-    <div class="neo-box" id="alumni">
-            <h2>Alumni</h2>
-            <ul class="alumni-list">
-                <li>
-                    <strong>Dr. Vincent Michal</strong> - Postdoctoral Researcher (2023-2024)
-                    <p>Current position: Assistant Professor at the Niels Bohr Institute, Copenhagen</p>
-                </li>
-                <li>
-                    <strong>Dr. Barnaby Van Straaten</strong> - PhD Student (2020-2024)
-                    <p>Current position: Postdoctoral Researcher at TU Delft</p>
-                </li>
-                <li>
-                    <strong>Dr. Brandon Severin</strong> - PhD Student (2020-2024)
-                    <p>Current position: CEO/Co-Founder at Conductor Quantum</p>
-                </li>
-                <li>
-                    <strong>Dr. Kushagra Aggarwal</strong> - PhD Student (2020-2023)
-                    <p>Current position: Postdoctoral Researcher at Cornell University</p>
-                </li>
-
-                <li>
-                    <strong>Dr. Sebastian Orbell</strong> - PhD Student (2020-2024)
-                    <p>Current position: Research Scientist at Quantum Motion</p>
-                </li>
-
-                <li>
-                    <strong>Dr. David Craig</strong> - PhD Student (2020-2024)
-                    <p>Current position: Research Scientist at QuantrolOx</p>
-                </li>
-
-                <li>
-                    <strong>Dr. Florian Vigneau</strong> - Postdoctoral Researcher (2019-2021)
-                    <p>Current position: Senior Quantum Hardware Engineer at IQM</p>
-                </li>
-
-                 <li>
-                    <strong>Dr. Anna Pearson</strong> - PhD Student (2016-2020)
-                    <p>Current position: Lead Manager R&D (Research Scientist) at Quantinuum</p>
-                </li>
-
-                <li>
-                    <strong>Dr. Dominic Lennon</strong> - PhD Student (2017-2021)
-                    <p>Current position: Cofounder and Direct of Product at Quantrol Ox</p>
-                </li>
-
-                 <li>
-                    <strong>Dr. Hyungil Moon</strong> - Postdoctoral Researcher (2017-2021)
-                    <p>Current position: Quantitative Strategist at Deutsche Bank</p>
-                </li>
-
-                <li>
-                    <strong>Dr. Vu Nguyen</strong> - Postdoctoral Researcher (2019-2020)
-                    <p>Current position: Senior Machine Learning Scientist at Amazon Australia</p>
-                </li>
-
-
-
-
-            </ul>
-        </div>
-
     
+        <div class="neo-box" id="team-members">
+            <div class="team-section">
+                <h2>Our Team</h2>
+
+                <!-- Principal Investigator Section -->
+                <h3>Principal Investigator</h3>
+                <div class="team-leader-grid">
+                    <div class="team-leader">
+                        <div class="team-member">
+                            <img src="website_images/Natalia_Ares.webp" alt="Dr. Natalia Ares">
+                            <div class="member-info">
+                                <h4>Dr. Natalia Ares</h4>
+                                <p>Dr. Ares leads the research group focusing on quantum behaviour in nanoscale devices. Her work explores the manipulation of quantum systems and the development of quantum technologies. She is dedicated to advancing understanding in quantum thermodynamics and the application of machine learning in quantum devices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Manager Section -->
+                <h3>Project Manager</h3>
+                <div class="team-manager-grid">
+                    <div class="team-manager">
+                        <div class="team-member">
+                            <img src="website_images/Maria_Fuentes.jpg" alt="Project Manager Name">
+                            <div class="member-info">
+                                <h4>Maria Fuentes Perez</h4>
+                                <p>I am the project manager for Natalia Ares's team. With a background in physics, I completed my PhD at the CNB (Spain), focusing on the interface of physics and biology. Afterward, I joined Imperial College London (UK) as a postdoc before moving into the private biotech sector, where I worked as both an operations and project manager. Currently, I manage the portfolio of projects for Natalia and her team.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Post-docs Section -->
+                <h3>Post-docs</h3>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="website_images/Federico_Fedele.webp" alt="Dr. Federico Fedele">
+                        <div class="member-info">
+                            <h4>Dr. Federico Fedele</h4>
+                            <p>My main research area is on quantum technologies and nanoscale quantum devices that allow fine control over individual charges and spins used to encode and manipulate quantum information. Additionally, I am interested in hybrid devices, in which individual quantum systems are coupled to nanomechanical resonators such that their thermodynamic quantities can be measured and harnessed to further optimize these quantum systems.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <img src="website_images/Yikai_Yang.webp" alt="Dr. Yikai Yang">
+                        <div class="member-info">
+                            <h4>Dr. Yikai Yang</h4>
+                            <p>Dr. Yikai Yang holds a B.Sc. in theoretical physics from Lanzhou University in China. He then pursued a M.Sc. in experimental physics at University of Alberta in Canada, focusing on unconventional superconductors. After working in industry for four years, he joined EPFL in Switzerland for a Ph.D. program under the supervision of Dr. Henrik M. Ronnow, investigating quantum critical behaviours of strongly hybridised electro-nuclear spin states. In 2023, he joined Dr. Natalia Ares' group at the University of Oxford as a postdoctoral research assistant, working on various topics in Quantum Thermodynamics. Since April 2024, he holds a Newton International Fellowship from the Royal Society with a research focus on the materialisation of quantum engines.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <img src="website_images/Joseph_Hickie.webp" alt="Dr. Joseph Hickie">
+                        <div class="member-info">
+                            <h4>Dr. Joseph Hickie</h4>
+                            <p>Designing algorithms to improve quantum dot device readout and working on pulse optimisation for semiconductor qubits.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <img src="website_images/Parth_Girdhar.jpeg" alt="Dr. Parth Girdhar">
+                        <div class="member-info">
+                            <h4>Dr. Parth Girdhar</h4>
+                            <p>I received B.Sc (Advanced) 1st class Honours majoring in physics, mathematics and thesis on theoretical cosmology, and Ph.D. on theoretical foundations of quantum physics, both from the University of Sydney. I have completed postdoctoral research at the University of New South Wales.  My research interests include machine learning for quantum device control, physical machine learning, quantum foundations and information theory.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Students Section -->
+                <h3>Students</h3>
+                <div class="team-grid">
+                
+
+                    <div class="team-member">
+                        <img src="website_images/Marek_Rychetsky.png" alt="Marek Rychetský">
+                        <div class="member-info">
+                            <h4>Marek Rychetský</h4>
+                            <p>Marek is a DPhil student in the group, working on machine learning for tuning quantum dots.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <img src="website_images/Jonathan_Dexter.webp" alt="Jonathan Dexter">
+                        <div class="member-info">
+                            <h4>Jonathan Dexter</h4>
+                            <p>Quantum thermodynamics and foundations.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <img src="website_images/Pranav_Vaidhyanathan.png" alt="Pranav Vaidhyanathan">
+                        <div class="member-info">
+                            <h4>Pranav Vaidhyanathan</h4>
+                            <p>Theory of open quantum systems, specifically interested in investigating continuous measurements and feedback control in non-Markovian systems.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <img src="website_images/Lucas_Schorling.png" alt="Lucas Schorling">
+                        <div class="member-info">
+                            <h4>Lucas Schorling</h4>
+                            <p>I graduated with a BSc in Engineering Science from the Technical University of Munich and an MSc in Applied Mathematics from the University of Oxford. My current research focuses on developing machine learning algorithms to tune and control quantum devices, ranging from meta-learning to Bayesian optimization.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <img src="website_images/Cornelius_Carlsson.png" alt="Cornelius Carlsson">
+                        <div class="member-info">
+                            <h4>Cornelius Carlsson</h4>
+                            <p>I completed an integrated MEng in Materials Science at Imperial College London, followed by an MSc in Applied Physics at the Technical University of Delft. During my MSc thesis, I focused on probing charge noise using quantum device crossbars. After an internship at IBM, where I worked on designing reflectometry circuits, I am now at Oxford researching autonomous tuning methods for scalable spin-qubit architectures.</p>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <img src="website_images/Vivek_Wadhia.jpeg" alt="Vivek Wadhia">
+                        <div class="member-info">
+                            <h4>Vivek Wadhia</h4>
+                            <p>My research focuses on noise characterisation and mitigation in superconducting and semiconducting qubits. I am particularly interested in the interplay between noise/errors, thermal effects and qubit benchmarking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alumni Section -->
+            <div class="neo-box" id="alumni">
+                <h2>Alumni</h2>
+                <ul class="alumni-list">
+                    <li>
+                        <strong>Dr. Jonas Schuff</strong> -PhD Student (2021-2024)
+                        <p>Current position: Research Engineer at Intel, Hillsborough, Oregon</p>
+                    </li>
+                    <li>
+                        <strong>Dr. Vincent Michal</strong> - Postdoctoral Researcher (2023-2024)
+                        <p>Current position: Assistant Professor at the Niels Bohr Institute, Copenhagen</p>
+                    </li>
+                    <li>
+                        <strong>Dr. Barnaby Van Straaten</strong> - PhD Student (2020-2024)
+                        <p>Current position: Postdoctoral Researcher at TU Delft</p>
+                    </li>
+                    <li>
+                        <strong>Dr. Brandon Severin</strong> - PhD Student (2020-2024)
+                        <p>Current position: CEO/Co-Founder at Conductor Quantum</p>
+                    </li>
+                    <li>
+                        <strong>Dr. Kushagra Aggarwal</strong> - PhD Student (2020-2023)
+                        <p>Current position: Postdoctoral Researcher at Cornell University</p>
+                    </li>
+
+                    <li>
+                        <strong>Dr. Sebastian Orbell</strong> - PhD Student (2020-2a024)
+                        <p>Current position: Research Scientist at Quantum Motion</p>
+                    </li>
+
+                    <li>
+                        <strong>Dr. David Craig</strong> - PhD Student (2020-2024)
+                        <p>Current position: Research Scientist at QuantrolOx</p>
+                    </li>
+
+                    <li>
+                        <strong>Dr. Florian Vigneau</strong> - Postdoctoral Researcher (2019-2021)
+                        <p>Current position: Senior Quantum Hardware Engineer at IQM</p>
+                    </li>
+
+                     <li>
+                        <strong>Dr. Anna Pearson</strong> - PhD Student (2016-2020)
+                        <p>Current position: Lead Manager R&D (Research Scientist) at Quantinuum</p>
+                    </li>
+
+                    <li>
+                        <strong>Dr. Dominic Lennon</strong> - PhD Student (2017-2021)
+                        <p>Current position: Cofounder and Direct of Product at Quantrol Ox</p>
+                    </li>
+
+                     <li>
+                        <strong>Dr. Hyungil Moon</strong> - Postdoctoral Researcher (2017-2021)
+                        <p>Current position: Quantitative Strategist at Duetsche Bank</p>
+                    </li>
+
+                     <li>
+                        <strong>Dr. Hyungil Moon</strong> - Postdoctoral Researcher (2017-2021)
+                        <p>Current position: Quantitative Strategist at Duetsche Bank</p>
+                    </li>
+
+                    <li>
+                        <strong>Dr. Vu Nguyen</strong> - Postdoctoral Researcher (2019-2020)
+                        <p>Current position: Senior Machine Learning Scientist at Amazon Australia</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
     `;
 }
 
