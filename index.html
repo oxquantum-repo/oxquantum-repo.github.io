@@ -577,6 +577,7 @@
                     <li><a href="#" id="research-link">Our Research</a></li>
                     <li><a href="#" id="join-us-link">Join Us</a></li>
                     <li><a href="#" id="contact-link">Contact Us</a></li>
+                    <li><a href="https://eng.ox.ac.uk/quantumdevicelab/" target="_blank" rel="noopener noreferrer" id="oxford-link">Oxford Engineering Site</a></li>
                 </ul>
             </nav>
         </header>
@@ -596,6 +597,12 @@
         // Use event delegation for nav clicks
         document.querySelector('nav ul').addEventListener('click', function(event) {
             if (event.target.tagName === 'A') {
+                // Check if it's an external link (has target="_blank")
+                if (event.target.getAttribute('target') === '_blank') {
+                    // Allow default action for external links
+                    return;
+                }
+                
                 event.preventDefault();
                 const clickedLink = event.target;
                 setActiveLink(clickedLink);
